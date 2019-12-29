@@ -3,12 +3,12 @@ package com.to;
 public class UserCard {
 	private int cardNumber;
 	private String type;
-	private int balance;
+	private double balance;
 
 	public UserCard() {
 	}
 
-	public UserCard(int cardNumber, String type, int balance) {
+	public UserCard(int cardNumber, String type, double balance) {
 		super();
 		this.cardNumber = cardNumber;
 		this.type = type;
@@ -31,12 +31,17 @@ public class UserCard {
 		this.type = cardType;
 	}
 
-	public int getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(int balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "UserCard [cardNumber=" + cardNumber + ", type=" + type + ", balance=" + balance + "]";
 	}
 
 }

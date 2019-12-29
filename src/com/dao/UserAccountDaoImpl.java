@@ -32,21 +32,22 @@ public class UserAccountDaoImpl implements UserAccountDao {
 	}
 
 	@Override
-	public List<UserAccount> verifyAcct() throws Exception {
+	public List<UserAccount> login() throws Exception {
 		List<UserAccount> listUsers = new ArrayList<>();
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "select username, password from bank_user_account";
+			String sql = "select username, password, usertype from bank_user_account";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
-			
-			while(resultSet.next()) {
+
+			while (resultSet.next()) {
 				UserAccount user = new UserAccount();
 				user.setUsername(resultSet.getString("username"));
 				user.setPassword(resultSet.getString("password"));
+				user.setUsertype(resultSet.getString("usertype"));
 				listUsers.add(user);
 			}
-			
-			if(listUsers.size() == 0) {
+
+			if (listUsers.size() == 0) {
 				throw new Exception();
 			}
 
