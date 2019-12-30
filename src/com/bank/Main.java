@@ -1,5 +1,6 @@
 package com.bank;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -130,6 +131,26 @@ public class Main {
 									break;
 
 								case "4":
+									List<UserCard> transferList = custDao.cardBalanceInfoList();
+									System.out.println("Enter card number that you want to transfer to: ");
+									int cardForTransfer = input.nextInt();
+
+									System.out.println("Enter amount for transfer: ");
+									double transferamt = input.nextDouble();
+
+									if (transferamt < 0) {
+										System.out.println("Amt cannot be negative."); // do while to re-enter amt
+									} else {
+										for (UserCard transfer : transferList) {
+											if (cardForTransfer == transfer.getCardNumber()) {
+												transfer.setBalance(transferamt);
+												transfer.setReceiver(transfer.getUsername());
+												transfer.setUsername(u.getUsername());
+												custDao.transferMoney(transfer);
+												System.out.println("Succeeded.");
+											}
+										}
+									}
 									break;
 
 								case "5":
@@ -191,6 +212,68 @@ public class Main {
 									break;
 
 								case "6":
+									List<UserCard> amountPendingList = custDao.reviewingMoneyList();
+									List<UserCard> oldCardList = custDao.cardBalanceInfoList();
+									System.out.println(
+											"Enter card number to check if you have anything pending for approval: ");
+									int cardForApproval = input.nextInt();
+									double oldBalance = 0;
+									for (UserCard alist : amountPendingList) {
+										if (u.getUsername().equals(alist.getReceiver())
+												&& cardForApproval == alist.getCardNumber()) {
+											System.out.println("Card Number: " + alist.getCardNumber() + "\tAmount: "
+													+ alist.getBalance() + "\tSender: " + alist.getSender());
+											// username aka sender
+										}
+									}
+
+									for (UserCard o : oldCardList) {
+										if (u.getUsername().equals(o.getUsername())
+												&& cardForApproval == o.getCardNumber()) {
+											oldBalance = o.getBalance();
+										}
+									}
+
+									System.out.println("Enter the amount above to make transaction: ");
+									double reviewingAmount = input.nextDouble();
+
+									// Error for entering the wrong stuffs
+									System.out.println("Enter 1: Approve");
+									System.out.println("Enter 2: Deny");
+									option = input.next();
+
+									switch (option) {
+									case "1":
+										for (UserCard ca : amountPendingList) {
+											if (ca.getBalance() == reviewingAmount) {
+												ca.setBalance(reviewingAmount + oldBalance);
+
+												card = new UserCard(ca.getCardNumber(), ca.getType(), ca.getBalance(),
+														ca.getUsername());
+												custDao.updateCardBalance(card);
+
+												card = new UserCard(ca.getCardNumber(), ca.getType(), reviewingAmount,
+														ca.getUsername());
+												custDao.removeAmountPending(card);
+												System.out.println("Amount Approved.");
+											}
+										}
+										break;
+									case "2":
+										for (UserCard amt : amountPendingList) {
+											if (amt.getBalance() == reviewingAmount) {
+												card = new UserCard(amt.getCardNumber(), amt.getType(),
+														amt.getBalance(), amt.getUsername());
+												custDao.removeAmountPending(card);
+												System.out.println("Amount Denied.");
+											}
+										}
+										break;
+
+									default:
+										break;
+									}
+
 									break;
 
 								default:

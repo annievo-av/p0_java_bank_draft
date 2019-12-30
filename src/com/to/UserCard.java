@@ -6,6 +6,25 @@ public class UserCard {
 	private double balance;
 	private String username;
 
+	private String receiver;
+	private String sender;
+
+	public String getSender() {
+		return sender;
+	}
+
+	public void setSender(String sender) {
+		this.sender = sender;
+	}
+
+	public String getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
+	}
+
 	public UserCard() {
 	}
 

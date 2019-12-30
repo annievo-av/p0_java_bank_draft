@@ -2,17 +2,19 @@ package com.to;
 
 public class Transaction {
 	private int cardNumber;
-	private double withdraw;
-	private double deposit;
+	private double amount;
+	private String sender;
+	private String receiver;
 
 	public Transaction() {
 	}
 
-	public Transaction(int cardNumber, double withdraw, double deposit) {
+	public Transaction(int cardNumber, double amount, String sender, String receiver) {
 		super();
 		this.cardNumber = cardNumber;
-		this.withdraw = withdraw;
-		this.deposit = deposit;
+		this.amount = amount;
+		this.sender = sender;
+		this.receiver = receiver;
 	}
 
 	public int getCardNumber() {
@@ -23,20 +25,28 @@ public class Transaction {
 		this.cardNumber = cardNumber;
 	}
 
-	public double getWithdraw() {
-		return withdraw;
+	public double getAmount() {
+		return amount;
 	}
 
-	public void setWithdraw(double withdraw) {
-		this.withdraw = withdraw;
+	public void setAmount(double amount) {
+		this.amount = amount;
 	}
 
-	public double getDeposit() {
-		return deposit;
+	public String getSender() {
+		return sender;
 	}
 
-	public void setDeposit(double deposit) {
-		this.deposit = deposit;
+	public void setSender(String sender) {
+		this.sender = sender;
+	}
+
+	public String getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
 	}
 
 }

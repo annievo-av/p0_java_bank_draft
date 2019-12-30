@@ -35,7 +35,7 @@ public class CustDaoImpl implements CustDao {
 			String sql = "select cardnumber, cardtype, balance, username from bank_user_card";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
-			
+
 			while (resultSet.next()) {
 				UserCard card = new UserCard();
 				card.setCardNumber(resultSet.getInt("cardnumber"));
@@ -65,13 +65,52 @@ public class CustDaoImpl implements CustDao {
 
 	@Override
 	public void transferMoney(UserCard card) throws Exception {
-		// TODO Auto-generated method stub
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "insert into bank_amount_pending(cardnumber, amount, receiver, sender) values (?, ?, ?, ?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, card.getCardNumber());
+			preparedStatement.setDouble(2, card.getBalance());
+			preparedStatement.setString(3, card.getReceiver());
+			preparedStatement.setString(4, card.getUsername());
+			preparedStatement.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new Exception("Internal error occured");
+		}
 	}
 
 	@Override
-	public void reviewingMoney() throws Exception {
-		// TODO Auto-generated method stub
+	public List<UserCard> reviewingMoneyList() throws Exception {
+		List<UserCard> pendingAmtList = new ArrayList<>();
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "select cardnumber, amount, receiver, sender from bank_amount_pending";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
 
+			while (resultSet.next()) {
+				UserCard card = new UserCard();
+				card.setCardNumber(resultSet.getInt("cardnumber"));
+				card.setBalance(resultSet.getDouble("amount"));
+				card.setReceiver(resultSet.getString("receiver"));
+				card.setSender(resultSet.getString("sender"));
+				pendingAmtList.add(card);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new Exception("Internal error occured");
+		}
+		return pendingAmtList;
 	}
 
+	@Override
+	public void removeAmountPending(UserCard card) throws Exception {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "delete from bank_amount_pending where cardnumber = ? AND amount = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, card.getCardNumber());
+			preparedStatement.setDouble(2, card.getBalance());
+			preparedStatement.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new Exception("Internal error occured");
+		}
+	}
+	
 }
