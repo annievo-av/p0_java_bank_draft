@@ -4,15 +4,17 @@ public class UserCard {
 	private int cardNumber;
 	private String type;
 	private double balance;
+	private String username;
 
 	public UserCard() {
 	}
 
-	public UserCard(int cardNumber, String type, double balance) {
+	public UserCard(int cardNumber, String type, double balance, String username) {
 		super();
 		this.cardNumber = cardNumber;
 		this.type = type;
 		this.balance = balance;
+		this.username = username;
 	}
 
 	public int getCardNumber() {
@@ -39,9 +41,18 @@ public class UserCard {
 		this.balance = balance;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
-		return "UserCard [cardNumber=" + cardNumber + ", type=" + type + ", balance=" + balance + "]";
+		return "UserCard [cardNumber=" + cardNumber + ", type=" + type + ", balance=" + balance + ", username="
+				+ username + "]";
 	}
 
 }

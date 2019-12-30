@@ -35,7 +35,7 @@ public class EmpDaoImpl implements EmpDao {
 	}
 
 	@Override
-	public void approveUser(UserAccount userAccount) throws Exception {
+	public void approveUserAccount(UserAccount userAccount) throws Exception {
 		try (Connection connection = OracleConnection.getConnection()) {
 			String sql = "insert into bank_user_account(username, password, usertype) values (?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -49,7 +49,7 @@ public class EmpDaoImpl implements EmpDao {
 	}
 
 	@Override
-	public void removePending(UserAccount userAccount) throws Exception {
+	public void removeAccountPending(UserAccount userAccount) throws Exception {
 		try (Connection connection = OracleConnection.getConnection()) {
 			String sql = "delete from bank_user_pending where username = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class EmpDaoImpl implements EmpDao {
 				user.setUsername(resultSet.getString("username"));
 				user.setPassword(resultSet.getString("password"));
 				user.setCard(new UserCard(resultSet.getInt("cardnumber"), resultSet.getString("cardtype"),
-						resultSet.getDouble("balance")));
+						resultSet.getDouble("balance"), resultSet.getString("username")));
 				acctList.add(user);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
@@ -84,9 +84,58 @@ public class EmpDaoImpl implements EmpDao {
 	}
 
 	@Override
-	public List<Transaction> logOfTransactionByCardNumber() throws Exception {
+	public List<Transaction> logOfTransactionByCardNumber() throws Exception { // left over
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<UserCard> newCardApprovalList() throws Exception {
+		List<UserCard> pendingList = new ArrayList<>();
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "select cardnumber, balance, type, username from bank_card_pending";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				UserCard card = new UserCard();
+				card.setCardNumber(resultSet.getInt("cardnumber"));
+				card.setBalance(resultSet.getDouble("balance"));
+				card.setType(resultSet.getString("type"));
+				card.setUsername(resultSet.getString("username"));
+				pendingList.add(card);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new Exception("Internal error occured");
+		}
+		return pendingList;
+	}
+	
+	@Override
+	public void approveUserCard(UserCard card) throws Exception {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "insert into bank_user_card(cardnumber, balance, cardtype, username) values (?, ?, ?, ?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, card.getCardNumber());
+			preparedStatement.setDouble(2, card.getBalance());
+			preparedStatement.setString(3, card.getType());
+			preparedStatement.setString(4, card.getUsername());
+			preparedStatement.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new Exception("Internal error occured");
+		}
+	}
+
+	@Override
+	public void removeCardPending(UserCard card) throws Exception {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "delete from bank_card_pending where cardnumber = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, card.getCardNumber());
+			preparedStatement.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new Exception("Internal error occured");
+		}
 	}
 
 }
