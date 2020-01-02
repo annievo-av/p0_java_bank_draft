@@ -23,12 +23,4 @@ public interface EmpBo {
 	public List<UserCard> transactionLogList() throws BusinessException;
 	
 	public List<UserAccount> accountInfoList() throws BusinessException;
-	
-	public void viewCustomerAccount() throws BusinessException;
-	
-	public void pendindAccount() throws BusinessException;
-	
-	public void pendindCard() throws BusinessException;
-	
-	public void viewTransactionLog() throws BusinessException;
 }

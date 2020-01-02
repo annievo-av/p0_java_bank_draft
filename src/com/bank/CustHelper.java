@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.bank.bo.CustBo;
 import com.bank.bo.CustBoImpl;
 import com.bank.bo.EmpBo;
@@ -16,6 +18,9 @@ import com.bank.to.UserAccount;
 import com.bank.to.UserCard;
 
 public class CustHelper {
+
+	final static Logger log = Logger.getLogger(CustHelper.class);
+
 	Scanner input = new Scanner(System.in);
 	UserBo userBo = new UserBoImpl();
 	CustBo custBo = new CustBoImpl();
@@ -26,14 +31,14 @@ public class CustHelper {
 	Date date = new Date(System.currentTimeMillis());
 
 	public void customerEntryLogic(UserAccount userAccount) throws BusinessException {
-		System.out.println("Enter task number according to the below criteria:");
-		System.out.println("1. View Account Balance");
-		System.out.println("2. Deposit");
-		System.out.println("3. Withdraw");
-		System.out.println("4. Transfer");
-		System.out.println("5. Pending money");
-		System.out.println("6. Apply for a new bank account");
-		System.out.println("Enter any key to exit!");
+		log.info("Enter task number according to the below criteria:");
+		log.info("1. View Account Balance");
+		log.info("2. Deposit");
+		log.info("3. Withdraw");
+		log.info("4. Transfer");
+		log.info("5. Pending money");
+		log.info("6. Apply for a new bank account");
+		log.info("Enter any key to exit!");
 		String option = input.nextLine();
 		switch (option) {
 		case "1":
@@ -61,16 +66,16 @@ public class CustHelper {
 			customerEntryLogic(userAccount);
 			break;
 		default:
-			userBo.logout();
+			logout();
 		}
 	}
 
 	public void viewAccountBalance(UserAccount userAccount) throws BusinessException {
 		List<UserCard> cardBalanceInfoList = custBo.cardBalanceInfoList();
-		System.out.println("Your card(s) balance: ");
+		log.info("Your card(s) balance: ");
 		for (UserCard card : cardBalanceInfoList) {
 			if (card.getUsername().equals(userAccount.getUsername())) {
-				System.out.println("Card Number: " + card.getCardNumber() + "\tBalance: " + card.getBalance());
+				log.info("Card Number: " + card.getCardNumber() + "\tBalance: " + card.getBalance());
 			}
 		}
 	}
@@ -83,20 +88,20 @@ public class CustHelper {
 		double depositAmount;
 
 		if (cardBalanceInfoList.size() == 0) {
-			System.out.println("You currently don't own any card!");
+			log.info("You currently don't own any card!");
 		} else if (cardBalanceInfoList.size() == 1) {
 			do {
-				System.out.println("Enter amount: ");
-				
-				while(input.nextLine().matches("^[a-zA-Z]*$")){
-					System.out.println("Invalid input. Please enter number only!");
-					System.out.println("Enter amount: ");
+				log.info("Enter amount: ");
+
+				while (input.nextLine().matches("^[a-zA-Z]*$")) {
+					log.info("Invalid input. Please enter number only!");
+					log.info("Enter amount: ");
 				}
-				
+
 				depositAmount = Double.parseDouble(input.nextLine());
 
 				if (depositAmount < 0) {
-					System.out.println("Deposit amount cannot be negative. Try again!");
+					log.info("Deposit amount cannot be negative. Try again!");
 				}
 			} while (depositAmount < 0);
 
@@ -104,45 +109,44 @@ public class CustHelper {
 				myCard = cardBalanceInfoList.get(0);
 				myCard.setBalance(myCard.getBalance() + depositAmount);
 				custBo.updateCardBalance(myCard);
-				System.out.println("Succeeded.");
+				log.info("Succeeded.");
 				myCard.setTransactionTime(formatter.format(date));
 				myCard.setTransactionMessage("Deposited $" + depositAmount + " to " + myCard.getCardNumber());
 				custBo.transactionMessage(myCard);
 			}
 		} else {
 			do {
-				System.out.println(
-						"You have more than one card, please enter the card number that you want to deposit to: ");
+				log.info("You have more than one card, please enter the card number that you want to deposit to: ");
 				cardNumberForDeposit = Integer.parseInt(input.nextLine());
 				for (int i = 0; i < cardBalanceInfoList.size(); i++) {
 					if (cardBalanceInfoList.get(i).getCardNumber() == cardNumberForDeposit) {
 						myCard = cardBalanceInfoList.get(i);
 						do {
-							System.out.println("Enter amount: ");
+							log.info("Enter amount: ");
 							String answer = input.nextLine();
-							while(answer.matches("^[a-zA-Z]*$")){
-								System.out.println("Invalid input. Please enter number only!");
-								System.out.println("Enter amount: ");
+							while (answer.matches("^[a-zA-Z]*$")) {
+								log.info("Invalid input. Please enter number only!");
+								log.info("Enter amount: ");
 								answer = input.nextLine();
 							}
-							
+
 							depositAmount = Double.parseDouble(answer);
 							if (depositAmount < 0) {
-								System.out.println("The amount cannot be negative. Try again!");
+								log.info("The amount cannot be negative. Try again!");
 							}
 						} while (depositAmount < 0);
 
 						UserCard card = cardBalanceInfoList.get(i);
 						card.setBalance(card.getBalance() + depositAmount);
 						custBo.updateCardBalance(card);
-						System.out.println("Succeeded.");
+						log.info("Succeeded.");
 						card.setTransactionTime(formatter.format(date));
 						card.setTransactionMessage("Deposited $" + depositAmount + " to " + card.getCardNumber());
 						custBo.transactionMessage(card);
 					}
 				}
 				if (myCard.getCardNumber() != cardNumberForDeposit) {
-					System.out.println("Invalid input. Try again!");
+					log.info("Invalid input. Try again!");
 				}
 			} while (myCard.getCardNumber() != cardNumberForDeposit);
 		}
@@ -156,13 +160,13 @@ public class CustHelper {
 		double withdrawAmount, newBalance;
 
 		if (cardBalanceInfoList.size() == 0) {
-			System.out.println("You currently don't own any card!");
+			log.info("You currently don't own any card!");
 		} else if (cardBalanceInfoList.size() == 1) {
 			do {
-				System.out.println("Enter amount: ");
+				log.info("Enter amount: ");
 				withdrawAmount = Double.parseDouble(input.nextLine());
 				if (withdrawAmount < 0) {
-					System.out.println("The amount cannot be negative. Try again!");
+					log.info("The amount cannot be negative. Try again!");
 				}
 			} while (withdrawAmount < 0);
 
@@ -171,14 +175,14 @@ public class CustHelper {
 				newBalance = card.getBalance() - withdrawAmount;
 				if (newBalance < 0) {
 					do {
-						System.out.println("Invalid amount. Your current balance is " + card.getBalance());
-						System.out.println("Enter amount: ");
+						log.info("Invalid amount. Your current balance is " + card.getBalance());
+						log.info("Enter amount: ");
 						withdrawAmount = Double.parseDouble(input.nextLine());
 					} while (newBalance < 0);
 				} else {
 					card.setBalance(newBalance);
 					custBo.updateCardBalance(card);
-					System.out.println("Succeeded.");
+					log.info("Succeeded.");
 					card.setTransactionTime(formatter.format(date));
 					card.setTransactionMessage("Withdrew $" + withdrawAmount + " from " + card.getCardNumber());
 					custBo.transactionMessage(card);
@@ -186,35 +190,34 @@ public class CustHelper {
 			}
 		} else {
 			do {
-				System.out.println(
-						"You have more than one card, please enter the card number that you want to withdraw from: ");
+				log.info("You have more than one card, please enter the card number that you want to withdraw from: ");
 				cardNumberForWithdraw = Integer.parseInt(input.nextLine());
 				for (int i = 0; i < cardBalanceInfoList.size(); i++) {
 					if (cardBalanceInfoList.get(i).getCardNumber() == cardNumberForWithdraw) {
 						myCard = cardBalanceInfoList.get(i);
 						UserCard card = cardBalanceInfoList.get(i);
 						do {
-							System.out.println("Enter amount: ");
+							log.info("Enter amount: ");
 							withdrawAmount = Double.parseDouble(input.nextLine());
 							newBalance = card.getBalance() - withdrawAmount;
 							if (withdrawAmount < 0) {
-								System.out.println("The amount cannot be negative. Try again!");
+								log.info("The amount cannot be negative. Try again!");
 							}
 							if (newBalance < 0) {
-								System.out.println("Invalid amount. Your current balance is " + card.getBalance());
+								log.info("Invalid amount. Your current balance is " + card.getBalance());
 							}
 						} while (withdrawAmount < 0 || newBalance < 0);
 
 						card.setBalance(newBalance);
 						custBo.updateCardBalance(card);
-						System.out.println("Succeeded.");
+						log.info("Succeeded.");
 						card.setTransactionTime(formatter.format(date));
 						card.setTransactionMessage("Withdrew $" + withdrawAmount + " from " + card.getCardNumber());
 						custBo.transactionMessage(card);
 					}
 				}
 				if (myCard.getCardNumber() != cardNumberForWithdraw) {
-					System.out.println("Invalid input. Try again!");
+					log.info("Invalid input. Try again!");
 				}
 			} while (myCard.getCardNumber() != cardNumberForWithdraw);
 		}
@@ -227,10 +230,10 @@ public class CustHelper {
 		int cardNumberTransferTo;
 
 		if (myCardList.size() == 0) {
-			System.out.println("You currently don't own any card for transferring!");
+			log.info("You currently don't own any card for transferring!");
 		}
 
-		System.out.println("Enter the card number that you want to transfer to: ");
+		log.info("Enter the card number that you want to transfer to: ");
 		cardNumberTransferTo = Integer.parseInt(input.nextLine());
 
 		if (myCardList.size() == 1) {
@@ -239,14 +242,14 @@ public class CustHelper {
 			for (UserAccount systemCard : systemCardList) {
 				if (systemCard.getCard().getCardNumber() == cardNumberTransferTo) {
 					do {
-						System.out.println("Enter amount: ");
+						log.info("Enter amount: ");
 						transferAmount = Double.parseDouble(input.nextLine());
 						myNewBalance = myBalance - transferAmount;
 						if (transferAmount < 0) {
-							System.out.println("The amount cannot be negative. Try again!");
+							log.info("The amount cannot be negative. Try again!");
 						}
 						if (myNewBalance < 0) {
-							System.out.println("Invalid amount. Your current balance is " + myBalance);
+							log.info("Invalid amount. Your current balance is " + myBalance);
 						}
 					} while (transferAmount < 0 || myNewBalance < 0);
 
@@ -260,7 +263,7 @@ public class CustHelper {
 					myUpdatedCard.setBalance(myNewBalance);
 					custBo.updateCardBalance(myUpdatedCard);
 
-					System.out.println("Succeeded.");
+					log.info("Succeeded.");
 					myUpdatedCard.setTransactionTime(formatter.format(date));
 					myUpdatedCard
 							.setTransactionMessage("Transferred $" + transferAmount + " to " + card.getCardNumber());
@@ -268,9 +271,9 @@ public class CustHelper {
 				}
 			}
 		} else {
-			System.out.println("Your cards details: ");
+			log.info("Your cards details: ");
 			viewAccountBalance(userAccount);
-			System.out.println("Enter the card number that you want to withdraw from: ");
+			log.info("Enter the card number that you want to withdraw from: ");
 			int myInputCardNumber = Integer.parseInt(input.nextLine());
 
 			for (UserAccount systemCard : systemCardList) {
@@ -279,14 +282,14 @@ public class CustHelper {
 						if (myCard.getCardNumber() == myInputCardNumber) {
 							myBalance = myCard.getBalance();
 							do {
-								System.out.println("Enter amount: ");
+								log.info("Enter amount: ");
 								transferAmount = Double.parseDouble(input.nextLine());
 								myNewBalance = myBalance - transferAmount;
 								if (transferAmount < 0) {
-									System.out.println("The amount cannot be negative. Try again!");
+									log.info("The amount cannot be negative. Try again!");
 								}
 								if (myNewBalance < 0) {
-									System.out.println("Invalid amount. Your current balance is " + myBalance);
+									log.info("Invalid amount. Your current balance is " + myBalance);
 								}
 							} while (transferAmount < 0 || myNewBalance < 0);
 
@@ -299,7 +302,7 @@ public class CustHelper {
 							myCard.setBalance(myNewBalance);
 							custBo.updateCardBalance(myCard);
 
-							System.out.println("Succeeded.");
+							log.info("Succeeded.");
 							myCard.setTransactionTime(formatter.format(date));
 							myCard.setTransactionMessage(
 									"Transferred $" + transferAmount + " to " + card.getCardNumber());
@@ -312,36 +315,36 @@ public class CustHelper {
 	}
 
 	public void applyNewCard(UserAccount userAccount, UserCard card) throws BusinessException {
-		System.out.println("Enter your customized card number: ");
+		log.info("Enter your customized card number: ");
 		card.setCardNumber(Integer.parseInt(input.nextLine()));
 		card.setUsername(userAccount.getUsername());
 
 		double startingBalance;
 		do {
-			System.out.println("Enter amount as starting balance: ");
+			log.info("Enter amount as starting balance: ");
 			startingBalance = Double.parseDouble(input.nextLine());
 			if (startingBalance < 0) {
-				System.out.println("The amount cannot be negative. Try again!");
+				log.info("The amount cannot be negative. Try again!");
 			}
 		} while (startingBalance < 0);
 		card.setBalance(startingBalance);
 
 		card = new UserCard(card.getCardNumber(), card.getCardType(), card.getBalance(), card.getUsername());
 		custBo.applyNewCard(card);
-		System.out.println("Congratulation, your new bank card has been created. Currently pending for approval!");
+		log.info("Congratulation, your new bank card has been created. Currently pending for approval!");
 	}
 
 	public void moneyPendingInfo(UserAccount userAccount, UserCard userCard) throws BusinessException {
 		List<UserCard> reviewMoneyPendingList = custBo.reviewMoneyPendingList();
 		List<UserCard> currentCardList = custBo.cardBalanceInfoList();
-		System.out.println("Enter your card number: ");
+		log.info("Enter your card number: ");
 		int cardNumberForReview = Integer.parseInt(input.nextLine());
 		double currentBalance = 0;
 
 		for (UserCard card : reviewMoneyPendingList) {
 			if (userAccount.getUsername().equals(card.getReceiver()) && cardNumberForReview == card.getCardNumber()) {
-				System.out.println("Card Number: " + card.getCardNumber() + "\tAmount: " + card.getBalance()
-						+ "\tSender: " + card.getSender());
+				log.info("Card Number: " + card.getCardNumber() + "\tAmount: " + card.getBalance() + "\tSender: "
+						+ card.getSender());
 			}
 		}
 
@@ -352,16 +355,16 @@ public class CustHelper {
 		}
 
 		if (reviewMoneyPendingList.size() == 0) {
-			System.out.println("Your list is empty!");
+			log.info("Your list is empty!");
 		} else {
 			double reviewBalance = reviewMoneyPendingList.get(0).getBalance();
 			if (reviewMoneyPendingList.size() > 1) {
-				System.out.println("Enter the amount regarding to the card number you want to make decision on: ");
+				log.info("Enter the amount regarding to the card number you want to make decision on: ");
 				reviewBalance = Double.parseDouble(input.nextLine());
 			}
-			System.out.println("Enter 1: Approve");
-			System.out.println("Enter 2: Deny");
-			System.out.println("Enter any key to exit!");
+			log.info("Enter 1: Approve");
+			log.info("Enter 2: Deny");
+			log.info("Enter any key to exit!");
 			String option = input.nextLine();
 			switch (option) {
 			case "1":
@@ -376,7 +379,7 @@ public class CustHelper {
 						card = new UserCard(card.getCardNumber(), card.getCardType(), reviewBalance,
 								card.getUsername());
 						custBo.removeAmountPending(card);
-						System.out.println("Amount Approved.");
+						log.info("Amount Approved.");
 						card.setUsername(userAccount.getUsername());
 						card.setTransactionTime(formatter.format(date));
 						card.setTransactionMessage("Approved $" + reviewBalance + " from " + card.getSender());
@@ -390,7 +393,7 @@ public class CustHelper {
 						card = new UserCard(card.getCardNumber(), card.getCardType(), card.getBalance(),
 								card.getUsername());
 						custBo.removeAmountPending(card);
-						System.out.println("Amount Denied.");
+						log.info("Amount Denied.");
 						card.setUsername(userAccount.getUsername());
 						card.setTransactionTime(formatter.format(date));
 						card.setTransactionMessage("Denied $" + reviewBalance + " from " + card.getSender());
@@ -399,9 +402,14 @@ public class CustHelper {
 				}
 				break;
 			default:
-				userBo.logout();
+				logout();
 			}
 		}
+	}
+
+	public void logout() {
+		log.info("Thank you for banking with us. See you again!");
+		System.exit(0);
 	}
 
 }

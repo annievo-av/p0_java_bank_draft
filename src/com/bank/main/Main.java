@@ -2,11 +2,15 @@ package com.bank.main;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.bank.UserHelper;
 import com.bank.exception.BusinessException;
 import com.bank.to.UserAccount;
 
 public class Main {
+
+	final static Logger log = Logger.getLogger(Main.class);
 
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
@@ -16,23 +20,23 @@ public class Main {
 
 		welcomeBanner();
 
-		System.out.println("Enter 1: Member Login");
-		System.out.println("Enter 2: Sign Up");
-		System.out.println("Enter any key to exit!");
+		log.info("Enter 1: Member Login");
+		log.info("Enter 2: Sign Up");
+		log.info("Enter any key to exit!");
 		String option = input.nextLine();
 		switch (option) {
 		case "1":
 			try {
 				userHelper.userLoginEntryLogic(userAccount);
 			} catch (BusinessException e) {
-				System.out.println(e.getMessage());
+				log.info(e.getMessage());
 			}
 			break;
 		case "2":
 			try {
 				userHelper.signupLogic(userAccount);
 			} catch (BusinessException e) {
-				System.out.println(e.getMessage());
+				log.info(e.getMessage());
 			}
 			break;
 		default:
@@ -41,12 +45,12 @@ public class Main {
 	}
 
 	public static void welcomeBanner() {
-		System.out.println("#####################################################################################");
-		System.out.println("#####################################################################################");
-		System.out.println("###########-------------" + ConsoleColors.BLUE_BOLD
+		log.info("#####################################################################################");
+		log.info("#####################################################################################");
+		log.info("###########-------------" + ConsoleColors.BLUE_BOLD
 				+ "Welcome to Noncreative-Naming Java Bank" + ConsoleColors.RESET_BLACK + "-----------###########");
-		System.out.println("#####################################################################################");
-		System.out.println("#####################################################################################");
+		log.info("#####################################################################################");
+		log.info("#####################################################################################");
 	}
 
 	public class ConsoleColors {
