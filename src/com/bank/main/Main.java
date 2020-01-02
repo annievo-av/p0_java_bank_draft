@@ -1,7 +1,8 @@
-package com.bank;
+package com.bank.main;
 
 import java.util.Scanner;
 
+import com.bank.UserHelper;
 import com.bank.exception.BusinessException;
 import com.bank.to.UserAccount;
 
