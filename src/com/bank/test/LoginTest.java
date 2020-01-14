@@ -12,11 +12,8 @@ import com.bank.to.UserAccount;
 class LoginTest {
 
 	@Test
-	void test(UserAccount userAccount) throws BusinessException {
-		userAccount.setUsername("ann");
-		userAccount.setPassword("ann");
-		UserBo userBo = new UserBoImpl();
-		userBo.signup(userAccount);
+	void test() {
+
 	}
 
 }

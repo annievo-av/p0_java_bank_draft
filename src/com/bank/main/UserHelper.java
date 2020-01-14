@@ -1,4 +1,4 @@
-package com.bank;
+package com.bank.main;
 
 import java.util.List;
 import java.util.Scanner;

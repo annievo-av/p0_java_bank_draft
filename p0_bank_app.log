@@ -1,0 +1,560 @@
+2020-01-02 09:06:06 INFO  Main:47 - #####################################################################################
+2020-01-02 09:06:06 INFO  Main:48 - #####################################################################################
+2020-01-02 09:06:06 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:06:06 INFO  Main:51 - #####################################################################################
+2020-01-02 09:06:06 INFO  Main:52 - #####################################################################################
+2020-01-02 09:06:06 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:06:06 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:06:06 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:06:16 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:06:17 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:06:21 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:06:21 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:06:21 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:06:21 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:06:21 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:06:21 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:06:21 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:06:21 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:06:24 INFO  CustHelper:75 - Your card(s) balance: 
+2020-01-02 09:06:24 INFO  CustHelper:78 - Card Number: 898989	Balance: 225.0
+2020-01-02 09:06:24 INFO  CustHelper:78 - Card Number: 989898	Balance: 7887.0
+2020-01-02 09:06:24 INFO  CustHelper:119 - You have more than one card, please enter the card number that you want to deposit to: 
+2020-01-02 09:06:35 INFO  CustHelper:125 - Enter amount: 
+2020-01-02 09:06:39 INFO  CustHelper:135 - The amount cannot be negative. Try again!
+2020-01-02 09:06:39 INFO  CustHelper:125 - Enter amount: 
+2020-01-02 09:06:47 INFO  CustHelper:142 - Succeeded.
+2020-01-02 09:06:47 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:06:47 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:06:47 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:06:47 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:06:47 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:06:47 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:06:47 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:06:47 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:06:51 INFO  CustHelper:75 - Your card(s) balance: 
+2020-01-02 09:06:51 INFO  CustHelper:78 - Card Number: 898989	Balance: 281.0
+2020-01-02 09:06:51 INFO  CustHelper:78 - Card Number: 989898	Balance: 7887.0
+2020-01-02 09:06:51 INFO  CustHelper:194 - You have more than one card, please enter the card number that you want to withdraw from: 
+2020-01-02 09:07:03 INFO  CustHelper:201 - Enter amount: 
+2020-01-02 09:07:15 INFO  CustHelper:214 - Succeeded.
+2020-01-02 09:07:15 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:07:15 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:07:15 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:07:15 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:07:15 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:07:15 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:07:15 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:07:15 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:07:21 INFO  CustHelper:362 - Enter your card number: 
+2020-01-02 09:07:24 INFO  CustHelper:369 - Card Number: 898989	Amount: 350.0	Sender: pend1
+2020-01-02 09:07:24 INFO  CustHelper:386 - Enter 1: Approve
+2020-01-02 09:07:24 INFO  CustHelper:387 - Enter 2: Deny
+2020-01-02 09:07:24 INFO  CustHelper:388 - Enter any key to exit!
+2020-01-02 09:07:42 INFO  CustHelper:403 - Amount Approved.
+2020-01-02 09:07:42 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:07:42 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:07:42 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:07:42 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:07:42 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:07:42 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:07:42 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:07:42 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:07:47 INFO  CustHelper:359 - You either don't own any card or your pending list is empty!
+2020-01-02 09:07:47 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:07:47 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:07:47 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:07:47 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:07:47 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:07:47 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:07:47 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:07:47 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:07:53 INFO  CustHelper:273 - Enter the card number that you want to transfer to: 
+2020-01-02 09:07:56 INFO  CustHelper:276 - Your cards details: 
+2020-01-02 09:07:56 INFO  CustHelper:75 - Your card(s) balance: 
+2020-01-02 09:07:56 INFO  CustHelper:78 - Card Number: 898989	Balance: 631.0
+2020-01-02 09:07:56 INFO  CustHelper:78 - Card Number: 989898	Balance: 887.0
+2020-01-02 09:07:56 INFO  CustHelper:278 - Enter the card number that you want to withdraw from: 
+2020-01-02 09:08:10 INFO  CustHelper:287 - Enter amount: 
+2020-01-02 09:08:17 INFO  CustHelper:307 - Succeeded.
+2020-01-02 09:08:17 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:08:17 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:08:17 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:08:17 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:08:17 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:08:17 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:08:17 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:08:17 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:08:28 INFO  CustHelper:432 - Thank you for banking with us. See you again!
+2020-01-02 09:08:33 INFO  Main:47 - #####################################################################################
+2020-01-02 09:08:33 INFO  Main:48 - #####################################################################################
+2020-01-02 09:08:33 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:08:33 INFO  Main:51 - #####################################################################################
+2020-01-02 09:08:33 INFO  Main:52 - #####################################################################################
+2020-01-02 09:08:33 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:08:33 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:08:33 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:08:35 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:08:37 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:08:39 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:08:39 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:08:39 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:08:39 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:08:39 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:08:39 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:08:41 INFO  EmpHelper:62 - 1. username: pend2
+2020-01-02 09:08:41 INFO  EmpHelper:62 - 2. username: pend1
+2020-01-02 09:08:41 INFO  EmpHelper:62 - 3. username: pend1
+2020-01-02 09:08:41 INFO  EmpHelper:62 - 4. username: java
+2020-01-02 09:08:41 INFO  EmpHelper:65 - Enter account's username for details: 
+2020-01-02 09:08:44 INFO  EmpHelper:69 - username=pend2, password=pend2, usertype=null, card=cardNumber=787878, cardType=Debit Card, balance=298.0, username=pend2
+2020-01-02 09:08:44 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:08:44 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:08:44 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:08:44 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:08:44 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:08:44 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:09:04 INFO  EmpHelper:83 - 1. username: pend6, password: pend6
+2020-01-02 09:09:04 INFO  EmpHelper:86 - Enter username for details: 
+2020-01-02 09:09:23 INFO  Main:47 - #####################################################################################
+2020-01-02 09:09:23 INFO  Main:48 - #####################################################################################
+2020-01-02 09:09:23 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:09:23 INFO  Main:51 - #####################################################################################
+2020-01-02 09:09:23 INFO  Main:52 - #####################################################################################
+2020-01-02 09:09:23 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:09:23 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:09:23 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:09:26 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:09:27 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:09:29 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:09:29 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:09:29 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:09:29 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:09:29 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:09:29 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:09:33 INFO  EmpHelper:170 - 1. pend1	Approved $350.0 from null	2020-01-02 at 09:06:06 CST
+2020-01-02 09:09:33 INFO  EmpHelper:170 - 2. pend1	Transferred $56.7 to 898989	2020-01-02 at 09:06:06 CST
+2020-01-02 09:09:33 INFO  EmpHelper:170 - 3. pend1	Withdrew $7000.0 from 989898	2020-01-02 at 09:06:06 CST
+2020-01-02 09:09:33 INFO  EmpHelper:170 - 4. pend1	Deposited $56.0 to 898989	2020-01-02 at 09:06:06 CST
+2020-01-02 09:09:33 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:09:33 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:09:33 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:09:33 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:09:33 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:09:33 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:14:14 INFO  Main:47 - #####################################################################################
+2020-01-02 09:14:14 INFO  Main:48 - #####################################################################################
+2020-01-02 09:14:14 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:14:14 INFO  Main:51 - #####################################################################################
+2020-01-02 09:14:14 INFO  Main:52 - #####################################################################################
+2020-01-02 09:14:14 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:14:14 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:14:14 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:14:17 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:14:21 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:14:24 INFO  UserHelper:44 - Your enter values are not matched with any account in our system. Please try again!
+2020-01-02 09:14:24 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:14:30 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:14:32 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:14:32 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:14:32 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:14:32 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:14:32 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:14:32 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:14:43 INFO  EmpHelper:126 - 1. cardNumber=123456789, cardType=Credit Card, balance=89.0, username=pend1
+2020-01-02 09:14:43 INFO  EmpHelper:126 - 2. cardNumber=7846372, cardType=Debit Card, balance=78.0, username=pend1
+2020-01-02 09:14:43 INFO  EmpHelper:126 - 3. cardNumber=221100, cardType=Debit Card, balance=56.0, username=pend2
+2020-01-02 09:14:43 INFO  EmpHelper:129 - Enter card number for details: 
+2020-01-02 09:14:58 INFO  EmpHelper:131 - Enter 1: Approve
+2020-01-02 09:14:58 INFO  EmpHelper:132 - Enter 2: Deny
+2020-01-02 09:14:58 INFO  EmpHelper:133 - Enter any key to exit!
+2020-01-02 09:14:59 INFO  EmpHelper:153 - Account Denied.
+2020-01-02 09:14:59 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:14:59 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:14:59 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:14:59 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:14:59 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:14:59 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:14:59 INFO  EmpHelper:178 - Thank you for banking with us. See you again!
+2020-01-02 09:17:01 INFO  Main:47 - #####################################################################################
+2020-01-02 09:17:01 INFO  Main:48 - #####################################################################################
+2020-01-02 09:17:01 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:17:01 INFO  Main:51 - #####################################################################################
+2020-01-02 09:17:01 INFO  Main:52 - #####################################################################################
+2020-01-02 09:17:01 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:17:01 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:17:01 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:17:05 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:17:06 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:17:09 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:17:09 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:17:09 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:17:09 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:17:09 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:17:09 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:17:12 INFO  EmpHelper:83 - 1. username: pend6, password: pend6
+2020-01-02 09:17:12 INFO  EmpHelper:86 - Enter username for details: 
+2020-01-02 09:17:20 INFO  EmpHelper:88 - Enter 1: Approve
+2020-01-02 09:17:20 INFO  EmpHelper:89 - Enter 2: Deny
+2020-01-02 09:17:20 INFO  EmpHelper:90 - Enter any key to exit!
+2020-01-02 09:17:25 INFO  EmpHelper:99 - Account Approved.
+2020-01-02 09:17:25 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:17:25 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:17:25 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:17:25 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:17:25 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:17:25 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:17:32 INFO  EmpHelper:79 - Approval list is empty!
+2020-01-02 09:17:32 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:17:32 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:17:32 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:17:32 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:17:32 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:17:32 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:33:22 INFO  Main:47 - #####################################################################################
+2020-01-02 09:33:22 INFO  Main:48 - #####################################################################################
+2020-01-02 09:33:22 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:33:22 INFO  Main:51 - #####################################################################################
+2020-01-02 09:33:22 INFO  Main:52 - #####################################################################################
+2020-01-02 09:33:22 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:33:22 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:33:22 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:33:26 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:33:32 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:33:34 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:33:34 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:33:34 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:33:34 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:33:34 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:33:34 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:33:34 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:33:34 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:33:36 INFO  CustHelper:75 - Your card(s) balance: 
+2020-01-02 09:33:36 INFO  CustHelper:78 - Card Number: 898989	Balance: 631.0
+2020-01-02 09:33:36 INFO  CustHelper:78 - Card Number: 989898	Balance: 830.3
+2020-01-02 09:33:36 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 09:33:36 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 09:33:36 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 09:33:36 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 09:33:36 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 09:33:36 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 09:33:36 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 09:33:36 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 09:33:52 INFO  Main:47 - #####################################################################################
+2020-01-02 09:33:52 INFO  Main:48 - #####################################################################################
+2020-01-02 09:33:52 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:33:52 INFO  Main:51 - #####################################################################################
+2020-01-02 09:33:52 INFO  Main:52 - #####################################################################################
+2020-01-02 09:33:52 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:33:52 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:33:52 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:33:54 INFO  UserHelper:28 - Enter username: 
+2020-01-02 09:33:56 INFO  UserHelper:30 - Enter password: 
+2020-01-02 09:33:58 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:33:58 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:33:58 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:33:58 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:33:58 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:33:58 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:34:01 INFO  EmpHelper:62 - 1. username: pend2
+2020-01-02 09:34:01 INFO  EmpHelper:62 - 2. username: pend1
+2020-01-02 09:34:01 INFO  EmpHelper:62 - 3. username: pend1
+2020-01-02 09:34:01 INFO  EmpHelper:62 - 4. username: java
+2020-01-02 09:34:01 INFO  EmpHelper:65 - Enter account's username for details: 
+2020-01-02 09:34:18 INFO  EmpHelper:69 - username=pend1, password=pend1, usertype=null, card=cardNumber=898989, cardType=Debit Card, balance=631.0, username=pend1
+2020-01-02 09:34:18 INFO  EmpHelper:69 - username=pend1, password=pend1, usertype=null, card=cardNumber=989898, cardType=Credit Card, balance=830.3, username=pend1
+2020-01-02 09:34:18 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:34:18 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:34:18 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:34:18 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:34:18 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:34:18 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:34:39 INFO  EmpHelper:170 - 1. pend1	Deposited $56.0 to 898989	2020-01-02 at 09:06:06 CST
+2020-01-02 09:34:39 INFO  EmpHelper:170 - 2. pend1	Transferred $56.7 to 898989	2020-01-02 at 09:06:06 CST
+2020-01-02 09:34:39 INFO  EmpHelper:170 - 3. pend1	Withdrew $7000.0 from 989898	2020-01-02 at 09:06:06 CST
+2020-01-02 09:34:39 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:34:39 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:34:39 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:34:39 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:34:39 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:34:39 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:35:07 INFO  EmpHelper:79 - Approval list is empty!
+2020-01-02 09:35:07 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 09:35:07 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 09:35:07 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 09:35:07 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 09:35:07 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 09:35:07 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 09:35:12 INFO  EmpHelper:62 - 1. username: pend2
+2020-01-02 09:35:12 INFO  EmpHelper:62 - 2. username: pend1
+2020-01-02 09:35:12 INFO  EmpHelper:62 - 3. username: pend1
+2020-01-02 09:35:12 INFO  EmpHelper:62 - 4. username: java
+2020-01-02 09:35:12 INFO  EmpHelper:65 - Enter account's username for details: 
+2020-01-02 09:39:35 INFO  Main:47 - #####################################################################################
+2020-01-02 09:39:35 INFO  Main:48 - #####################################################################################
+2020-01-02 09:39:35 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:39:35 INFO  Main:51 - #####################################################################################
+2020-01-02 09:39:35 INFO  Main:52 - #####################################################################################
+2020-01-02 09:39:35 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:39:35 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:39:35 INFO  Main:24 - Enter any key to exit!
+2020-01-02 09:56:03 INFO  UserHelper:50 - Enter username: 
+2020-01-02 09:56:13 INFO  UserHelper:52 - Enter password: 
+2020-01-02 09:56:15 INFO  UserHelper:54 - Your account details: 
+2020-01-02 09:56:15 INFO  UserHelper:55 - username: test1	password: test1
+2020-01-02 09:56:15 INFO  UserHelper:56 - Enter 1: Submit
+2020-01-02 09:56:15 INFO  UserHelper:57 - Enter 2: Re-enter
+2020-01-02 09:56:15 INFO  UserHelper:58 - Enter any key to exit!
+2020-01-02 09:56:22 INFO  UserHelper:64 - Congratulation, your account has been created. Currently pending for approval!
+2020-01-02 09:56:22 INFO  UserHelper:65 - Enter any key to exit!
+2020-01-02 09:56:24 INFO  UserHelper:23 - Thank you for banking with us. See you again!
+2020-01-02 09:56:29 INFO  Main:47 - #####################################################################################
+2020-01-02 09:56:29 INFO  Main:48 - #####################################################################################
+2020-01-02 09:56:29 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 09:56:29 INFO  Main:51 - #####################################################################################
+2020-01-02 09:56:29 INFO  Main:52 - #####################################################################################
+2020-01-02 09:56:29 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 09:56:29 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 09:56:29 INFO  Main:24 - Enter any key to exit!
+2020-01-02 10:16:09 INFO  Main:47 - #####################################################################################
+2020-01-02 10:16:09 INFO  Main:48 - #####################################################################################
+2020-01-02 10:16:09 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 10:16:09 INFO  Main:51 - #####################################################################################
+2020-01-02 10:16:09 INFO  Main:52 - #####################################################################################
+2020-01-02 10:16:09 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 10:16:09 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 10:16:09 INFO  Main:24 - Enter any key to exit!
+2020-01-02 10:28:37 INFO  UserHelper:50 - Enter username: 
+2020-01-02 10:28:39 INFO  UserHelper:52 - Enter password: 
+2020-01-02 10:28:40 INFO  UserHelper:54 - Your account details: 
+2020-01-02 10:28:40 INFO  UserHelper:55 - username: test2	password: test2
+2020-01-02 10:28:40 INFO  UserHelper:56 - Enter 1: Submit
+2020-01-02 10:28:40 INFO  UserHelper:57 - Enter 2: Re-enter
+2020-01-02 10:28:40 INFO  UserHelper:58 - Enter any key to exit!
+2020-01-02 10:28:49 INFO  UserHelper:64 - Congratulation, your account has been created. Currently pending for approval!
+2020-01-02 10:28:49 INFO  UserHelper:65 - Enter any key to exit!
+2020-01-02 10:28:52 INFO  UserHelper:23 - Thank you for banking with us. See you again!
+2020-01-02 10:28:57 INFO  Main:47 - #####################################################################################
+2020-01-02 10:28:57 INFO  Main:48 - #####################################################################################
+2020-01-02 10:28:57 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 10:28:57 INFO  Main:51 - #####################################################################################
+2020-01-02 10:28:57 INFO  Main:52 - #####################################################################################
+2020-01-02 10:28:57 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 10:28:57 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 10:28:57 INFO  Main:24 - Enter any key to exit!
+2020-01-02 10:33:04 INFO  UserHelper:50 - Enter username: 
+2020-01-02 10:33:08 INFO  UserHelper:52 - Enter password: 
+2020-01-02 10:33:11 INFO  UserHelper:54 - Your account details: 
+2020-01-02 10:33:11 INFO  UserHelper:55 - username: test	password: test
+2020-01-02 10:33:11 INFO  UserHelper:56 - Enter 1: Submit
+2020-01-02 10:33:11 INFO  UserHelper:57 - Enter 2: Re-enter
+2020-01-02 10:33:11 INFO  UserHelper:58 - Enter any key to exit!
+2020-01-02 10:33:21 INFO  UserHelper:64 - Congratulation, your account has been created. Currently pending for approval!
+2020-01-02 10:33:21 INFO  UserHelper:65 - Enter any key to exit!
+2020-01-02 10:33:21 INFO  UserHelper:23 - Thank you for banking with us. See you again!
+2020-01-02 10:33:40 INFO  Main:47 - #####################################################################################
+2020-01-02 10:33:40 INFO  Main:48 - #####################################################################################
+2020-01-02 10:33:40 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 10:33:40 INFO  Main:51 - #####################################################################################
+2020-01-02 10:33:40 INFO  Main:52 - #####################################################################################
+2020-01-02 10:33:40 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 10:33:40 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 10:33:40 INFO  Main:24 - Enter any key to exit!
+2020-01-02 10:33:43 INFO  UserHelper:50 - Enter username: 
+2020-01-02 10:33:45 INFO  UserHelper:52 - Enter password: 
+2020-01-02 10:33:47 INFO  UserHelper:54 - Your account details: 
+2020-01-02 10:33:47 INFO  UserHelper:55 - username: ann	password: ann
+2020-01-02 10:33:47 INFO  UserHelper:56 - Enter 1: Submit
+2020-01-02 10:33:47 INFO  UserHelper:57 - Enter 2: Re-enter
+2020-01-02 10:33:47 INFO  UserHelper:58 - Enter any key to exit!
+2020-01-02 10:33:52 INFO  UserHelper:23 - Thank you for banking with us. See you again!
+2020-01-02 10:33:54 INFO  Main:47 - #####################################################################################
+2020-01-02 10:33:54 INFO  Main:48 - #####################################################################################
+2020-01-02 10:33:54 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 10:33:54 INFO  Main:51 - #####################################################################################
+2020-01-02 10:33:54 INFO  Main:52 - #####################################################################################
+2020-01-02 10:33:54 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 10:33:54 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 10:33:54 INFO  Main:24 - Enter any key to exit!
+2020-01-02 10:33:56 INFO  UserHelper:28 - Enter username: 
+2020-01-02 10:33:58 INFO  UserHelper:30 - Enter password: 
+2020-01-02 10:34:02 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 10:34:02 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 10:34:02 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 10:34:02 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 10:34:02 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 10:34:02 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 10:34:07 INFO  EmpHelper:62 - 1. username: pend2
+2020-01-02 10:34:07 INFO  EmpHelper:62 - 2. username: pend1
+2020-01-02 10:34:07 INFO  EmpHelper:62 - 3. username: pend1
+2020-01-02 10:34:07 INFO  EmpHelper:62 - 4. username: java
+2020-01-02 10:34:07 INFO  EmpHelper:65 - Enter account's username for details: 
+2020-01-02 10:34:13 INFO  EmpHelper:69 - username=pend1, password=pend1, usertype=null, card=cardNumber=898989, cardType=Debit Card, balance=631.0, username=pend1
+2020-01-02 10:34:13 INFO  EmpHelper:69 - username=pend1, password=pend1, usertype=null, card=cardNumber=989898, cardType=Credit Card, balance=830.3, username=pend1
+2020-01-02 10:34:13 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 10:34:13 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 10:34:13 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 10:34:13 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 10:34:13 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 10:34:13 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 10:34:24 INFO  EmpHelper:83 - 1. username: test1, password: test1
+2020-01-02 10:34:24 INFO  EmpHelper:83 - 2. username: test2, password: test2
+2020-01-02 10:34:24 INFO  EmpHelper:83 - 3. username: test, password: test
+2020-01-02 10:34:24 INFO  EmpHelper:86 - Enter username for details: 
+2020-01-02 10:34:27 INFO  EmpHelper:88 - Enter 1: Approve
+2020-01-02 10:34:27 INFO  EmpHelper:89 - Enter 2: Deny
+2020-01-02 10:34:27 INFO  EmpHelper:90 - Enter any key to exit!
+2020-01-02 10:34:31 INFO  EmpHelper:108 - Account Denied.
+2020-01-02 10:34:31 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 10:34:31 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 10:34:31 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 10:34:31 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 10:34:31 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 10:34:31 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 10:34:36 INFO  EmpHelper:170 - 1. pend1	Deposited $56.0 to 898989	2020-01-02 at 09:06:06 CST
+2020-01-02 10:34:36 INFO  EmpHelper:170 - 2. pend1	Transferred $56.7 to 898989	2020-01-02 at 09:06:06 CST
+2020-01-02 10:34:36 INFO  EmpHelper:170 - 3. pend1	Withdrew $7000.0 from 989898	2020-01-02 at 09:06:06 CST
+2020-01-02 10:34:36 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-02 10:34:36 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-02 10:34:36 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-02 10:34:36 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-02 10:34:36 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-02 10:34:36 INFO  EmpHelper:31 - Enter any key to exit!
+2020-01-02 10:34:48 INFO  EmpHelper:178 - Thank you for banking with us. See you again!
+2020-01-02 10:34:52 INFO  Main:47 - #####################################################################################
+2020-01-02 10:34:52 INFO  Main:48 - #####################################################################################
+2020-01-02 10:34:52 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 10:34:52 INFO  Main:51 - #####################################################################################
+2020-01-02 10:34:52 INFO  Main:52 - #####################################################################################
+2020-01-02 10:34:52 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 10:34:52 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 10:34:52 INFO  Main:24 - Enter any key to exit!
+2020-01-02 10:34:57 INFO  UserHelper:28 - Enter username: 
+2020-01-02 10:34:58 INFO  UserHelper:30 - Enter password: 
+2020-01-02 10:35:02 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 10:35:02 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 10:35:02 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 10:35:02 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 10:35:02 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 10:35:02 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 10:35:02 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 10:35:02 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 10:35:04 INFO  CustHelper:432 - Thank you for banking with us. See you again!
+2020-01-02 10:35:09 INFO  Main:47 - #####################################################################################
+2020-01-02 10:35:09 INFO  Main:48 - #####################################################################################
+2020-01-02 10:35:09 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 10:35:09 INFO  Main:51 - #####################################################################################
+2020-01-02 10:35:09 INFO  Main:52 - #####################################################################################
+2020-01-02 10:35:09 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 10:35:09 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 10:35:09 INFO  Main:24 - Enter any key to exit!
+2020-01-02 10:35:11 INFO  UserHelper:28 - Enter username: 
+2020-01-02 10:35:12 INFO  UserHelper:30 - Enter password: 
+2020-01-02 10:35:15 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 10:35:15 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 10:35:15 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 10:35:15 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 10:35:15 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 10:35:15 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 10:35:15 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 10:35:15 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 10:35:17 INFO  CustHelper:75 - Your card(s) balance: 
+2020-01-02 10:35:17 INFO  CustHelper:78 - Card Number: 898989	Balance: 631.0
+2020-01-02 10:35:17 INFO  CustHelper:78 - Card Number: 989898	Balance: 830.3
+2020-01-02 10:35:17 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 10:35:17 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 10:35:17 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 10:35:17 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 10:35:17 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 10:35:17 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 10:35:17 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 10:35:17 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 10:35:24 INFO  CustHelper:75 - Your card(s) balance: 
+2020-01-02 10:35:24 INFO  CustHelper:78 - Card Number: 898989	Balance: 631.0
+2020-01-02 10:35:24 INFO  CustHelper:78 - Card Number: 989898	Balance: 830.3
+2020-01-02 10:35:24 INFO  CustHelper:119 - You have more than one card, please enter the card number that you want to deposit to: 
+2020-01-02 10:35:33 INFO  CustHelper:125 - Enter amount: 
+2020-01-02 10:35:36 INFO  CustHelper:135 - The amount cannot be negative. Try again!
+2020-01-02 10:35:36 INFO  CustHelper:125 - Enter amount: 
+2020-01-02 10:35:41 INFO  CustHelper:142 - Succeeded.
+2020-01-02 10:35:41 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 10:35:41 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 10:35:41 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 10:35:41 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 10:35:41 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 10:35:41 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 10:35:41 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 10:35:41 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 10:35:46 INFO  CustHelper:75 - Your card(s) balance: 
+2020-01-02 10:35:46 INFO  CustHelper:78 - Card Number: 898989	Balance: 711.0
+2020-01-02 10:35:46 INFO  CustHelper:78 - Card Number: 989898	Balance: 830.3
+2020-01-02 10:35:46 INFO  CustHelper:194 - You have more than one card, please enter the card number that you want to withdraw from: 
+2020-01-02 10:35:50 INFO  CustHelper:201 - Enter amount: 
+2020-01-02 10:35:53 INFO  CustHelper:208 - Invalid amount. Your current balance is 711.0
+2020-01-02 10:35:53 INFO  CustHelper:201 - Enter amount: 
+2020-01-02 10:36:00 INFO  CustHelper:214 - Succeeded.
+2020-01-02 10:36:00 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 10:36:00 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 10:36:00 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 10:36:00 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 10:36:00 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 10:36:00 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 10:36:00 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 10:36:00 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 10:36:05 INFO  CustHelper:362 - Enter your card number: 
+2020-01-02 10:36:08 INFO  CustHelper:369 - Card Number: 898989	Amount: 56.7	Sender: pend1
+2020-01-02 10:36:08 INFO  CustHelper:386 - Enter 1: Approve
+2020-01-02 10:36:09 INFO  CustHelper:387 - Enter 2: Deny
+2020-01-02 10:36:09 INFO  CustHelper:388 - Enter any key to exit!
+2020-01-02 10:36:15 INFO  CustHelper:403 - Amount Approved.
+2020-01-02 10:36:16 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 10:36:16 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 10:36:16 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 10:36:16 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 10:36:16 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 10:36:16 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 10:36:16 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 10:36:16 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 10:36:22 INFO  CustHelper:320 - Enter 1: Debit Card
+2020-01-02 10:36:22 INFO  CustHelper:321 - Enter 2: Credit Card
+2020-01-02 10:36:22 INFO  CustHelper:322 - Enter any key to exit!
+2020-01-02 10:36:27 INFO  CustHelper:335 - Enter your customized card number: 
+2020-01-02 10:36:31 INFO  CustHelper:341 - Enter amount as starting balance: 
+2020-01-02 10:36:34 INFO  CustHelper:344 - The amount cannot be negative. Try again!
+2020-01-02 10:36:34 INFO  CustHelper:341 - Enter amount as starting balance: 
+2020-01-02 10:36:37 INFO  CustHelper:351 - Congratulation, your new bank card has been created. Currently pending for approval!
+2020-01-02 10:36:37 INFO  CustHelper:34 - Enter task number according to the below criteria:
+2020-01-02 10:36:37 INFO  CustHelper:35 - 1. View Account Balance
+2020-01-02 10:36:37 INFO  CustHelper:36 - 2. Deposit
+2020-01-02 10:36:37 INFO  CustHelper:37 - 3. Withdraw
+2020-01-02 10:36:37 INFO  CustHelper:38 - 4. Transfer
+2020-01-02 10:36:37 INFO  CustHelper:39 - 5. Pending money
+2020-01-02 10:36:37 INFO  CustHelper:40 - 6. Apply for a new bank account
+2020-01-02 10:36:37 INFO  CustHelper:41 - Enter any key to exit!
+2020-01-02 10:39:46 INFO  Main:47 - #####################################################################################
+2020-01-02 10:39:46 INFO  Main:48 - #####################################################################################
+2020-01-02 10:39:46 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-02 10:39:46 INFO  Main:51 - #####################################################################################
+2020-01-02 10:39:46 INFO  Main:52 - #####################################################################################
+2020-01-02 10:39:46 INFO  Main:22 - Enter 1: Member Login
+2020-01-02 10:39:46 INFO  Main:23 - Enter 2: Sign Up
+2020-01-02 10:39:46 INFO  Main:24 - Enter any key to exit!
+2020-01-10 10:06:55 INFO  Main:47 - #####################################################################################
+2020-01-10 10:06:55 INFO  Main:48 - #####################################################################################
+2020-01-10 10:06:55 INFO  Main:49 - ###########-------------[1;34mWelcome to Noncreative-Naming Java Bank[0;30m-----------###########
+2020-01-10 10:06:55 INFO  Main:51 - #####################################################################################
+2020-01-10 10:06:55 INFO  Main:52 - #####################################################################################
+2020-01-10 10:06:55 INFO  Main:22 - Enter 1: Member Login
+2020-01-10 10:06:55 INFO  Main:23 - Enter 2: Sign Up
+2020-01-10 10:06:55 INFO  Main:24 - Enter any key to exit!
+2020-01-10 10:07:01 INFO  UserHelper:28 - Enter username: 
+2020-01-10 10:07:03 INFO  UserHelper:30 - Enter password: 
+2020-01-10 10:07:06 INFO  UserHelper:44 - Your enter values are not matched with any account in our system. Please try again!
+2020-01-10 10:07:06 INFO  UserHelper:28 - Enter username: 
+2020-01-10 10:07:09 INFO  UserHelper:30 - Enter password: 
+2020-01-10 10:07:12 INFO  EmpHelper:26 - Enter task number according to the below criteria: 
+2020-01-10 10:07:12 INFO  EmpHelper:27 - 1. View Customer Account
+2020-01-10 10:07:12 INFO  EmpHelper:28 - 2. New pending user account
+2020-01-10 10:07:12 INFO  EmpHelper:29 - 3. New pending customer card
+2020-01-10 10:07:12 INFO  EmpHelper:30 - 4. Transaction Log
+2020-01-10 10:07:12 INFO  EmpHelper:31 - Enter any key to exit!

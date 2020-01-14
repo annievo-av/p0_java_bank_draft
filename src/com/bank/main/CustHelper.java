@@ -1,4 +1,4 @@
-package com.bank;
+package com.bank.main;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -71,7 +71,7 @@ public class CustHelper {
 	}
 
 	public void viewAccountBalance(UserAccount userAccount) throws BusinessException {
-		List<UserCard> cardBalanceInfoList = custBo.cardBalanceInfoList();
+		List<UserCard> cardBalanceInfoList = custBo.cardBalanceInfoList(userAccount);
 		log.info("Your card(s) balance: ");
 		for (UserCard card : cardBalanceInfoList) {
 			if (card.getUsername().equals(userAccount.getUsername())) {
@@ -82,11 +82,11 @@ public class CustHelper {
 
 	public void deposit(UserAccount userAccount) throws BusinessException {
 		viewAccountBalance(userAccount);
-		List<UserCard> cardBalanceInfoList = custBo.cardBalanceInfoList();
+		List<UserCard> cardBalanceInfoList = custBo.cardBalanceInfoList(userAccount);
 		UserCard myCard = new UserCard();
 		int cardNumberForDeposit = 0;
 		double depositAmount;
-
+		cardBalanceInfoList.size();
 		if (cardBalanceInfoList.size() == 0) {
 			log.info("You currently don't own any card!");
 		} else if (cardBalanceInfoList.size() == 1) {
@@ -154,7 +154,8 @@ public class CustHelper {
 
 	public void withdraw(UserAccount userAccount) throws BusinessException {
 		viewAccountBalance(userAccount);
-		List<UserCard> cardBalanceInfoList = custBo.cardBalanceInfoList();
+		List<UserCard> cardBalanceInfoList = custBo.cardBalanceInfoList(userAccount);
+
 		UserCard myCard = new UserCard();
 		int cardNumberForWithdraw = 0;
 		double withdrawAmount, newBalance;
@@ -224,19 +225,17 @@ public class CustHelper {
 	}
 
 	public void transfer(UserAccount userAccount) throws BusinessException {
-		List<UserCard> myCardList = custBo.cardBalanceInfoList();
+		List<UserCard> myCardList = custBo.cardBalanceInfoList(userAccount);
 		List<UserAccount> systemCardList = empBo.accountInfoList();
 		double transferAmount, myBalance, myNewBalance;
 		int cardNumberTransferTo;
 
 		if (myCardList.size() == 0) {
 			log.info("You currently don't own any card for transferring!");
-		}
+		} else if (myCardList.size() == 1) {
 
-		log.info("Enter the card number that you want to transfer to: ");
-		cardNumberTransferTo = Integer.parseInt(input.nextLine());
-
-		if (myCardList.size() == 1) {
+			log.info("Enter the card number that you want to transfer to: ");
+			cardNumberTransferTo = Integer.parseInt(input.nextLine());
 			myBalance = myCardList.get(0).getBalance();
 
 			for (UserAccount systemCard : systemCardList) {
@@ -271,6 +270,9 @@ public class CustHelper {
 				}
 			}
 		} else {
+			log.info("Enter the card number that you want to transfer to: ");
+			cardNumberTransferTo = Integer.parseInt(input.nextLine());
+
 			log.info("Your cards details: ");
 			viewAccountBalance(userAccount);
 			log.info("Enter the card number that you want to withdraw from: ");
@@ -315,6 +317,21 @@ public class CustHelper {
 	}
 
 	public void applyNewCard(UserAccount userAccount, UserCard card) throws BusinessException {
+		log.info("Enter 1: Debit Card");
+		log.info("Enter 2: Credit Card");
+		log.info("Enter any key to exit!");
+		String option = input.nextLine();
+		switch (option) {
+		case "1":
+			card.setCardType("Debit Card");
+			break;
+		case "2":
+			card.setCardType("Credit Card");
+			break;
+		default:
+			logout();
+		}
+		
 		log.info("Enter your customized card number: ");
 		card.setCardNumber(Integer.parseInt(input.nextLine()));
 		card.setUsername(userAccount.getUsername());
@@ -336,27 +353,31 @@ public class CustHelper {
 
 	public void moneyPendingInfo(UserAccount userAccount, UserCard userCard) throws BusinessException {
 		List<UserCard> reviewMoneyPendingList = custBo.reviewMoneyPendingList();
-		List<UserCard> currentCardList = custBo.cardBalanceInfoList();
-		log.info("Enter your card number: ");
-		int cardNumberForReview = Integer.parseInt(input.nextLine());
-		double currentBalance = 0;
+		List<UserCard> currentCardList = custBo.cardBalanceInfoList(userAccount);
 
-		for (UserCard card : reviewMoneyPendingList) {
-			if (userAccount.getUsername().equals(card.getReceiver()) && cardNumberForReview == card.getCardNumber()) {
-				log.info("Card Number: " + card.getCardNumber() + "\tAmount: " + card.getBalance() + "\tSender: "
-						+ card.getSender());
-			}
-		}
-
-		for (UserCard card : currentCardList) {
-			if (userAccount.getUsername().equals(card.getUsername()) && cardNumberForReview == card.getCardNumber()) {
-				currentBalance = card.getBalance();
-			}
-		}
-
-		if (reviewMoneyPendingList.size() == 0) {
-			log.info("Your list is empty!");
+		if (reviewMoneyPendingList.size() == 0 || currentCardList.size() == 0) {
+			log.info("You either don't own any card or your pending list is empty!");
 		} else {
+
+			log.info("Enter your card number: ");
+			int cardNumberForReview = Integer.parseInt(input.nextLine());
+			double currentBalance = 0;
+
+			for (UserCard card : reviewMoneyPendingList) {
+				if (userAccount.getUsername().equals(card.getReceiver())
+						&& cardNumberForReview == card.getCardNumber()) {
+					log.info("Card Number: " + card.getCardNumber() + "\tAmount: " + card.getBalance() + "\tSender: "
+							+ card.getSender());
+				}
+			}
+
+			for (UserCard card : currentCardList) {
+				if (userAccount.getUsername().equals(card.getUsername())
+						&& cardNumberForReview == card.getCardNumber()) {
+					currentBalance = card.getBalance();
+				}
+			}
+
 			double reviewBalance = reviewMoneyPendingList.get(0).getBalance();
 			if (reviewMoneyPendingList.size() > 1) {
 				log.info("Enter the amount regarding to the card number you want to make decision on: ");

@@ -5,6 +5,7 @@ import java.util.List;
 import com.bank.dao.CustDao;
 import com.bank.dao.CustDaoImpl;
 import com.bank.exception.BusinessException;
+import com.bank.to.UserAccount;
 import com.bank.to.UserCard;
 
 public class CustBoImpl implements CustBo {
@@ -17,9 +18,9 @@ public class CustBoImpl implements CustBo {
 	}
 
 	@Override
-	public List<UserCard> cardBalanceInfoList() throws BusinessException {
+	public List<UserCard> cardBalanceInfoList(UserAccount userAccount) throws BusinessException {
 		List<UserCard> userCard = null;
-		userCard = getCustDao().cardBalanceInfoList();
+		userCard = getCustDao().cardBalanceInfoList(userAccount);
 		return userCard;
 	}
 

@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.bank.dbutil.OracleConnection;
 import com.bank.exception.BusinessException;
+import com.bank.to.UserAccount;
 import com.bank.to.UserCard;
 
 public class CustDaoImpl implements CustDao {
@@ -30,11 +31,12 @@ public class CustDaoImpl implements CustDao {
 	}
 
 	@Override
-	public List<UserCard> cardBalanceInfoList() throws BusinessException {
+	public List<UserCard> cardBalanceInfoList(UserAccount userAccount) throws BusinessException {
 		List<UserCard> cardBalanceInfoList = new ArrayList<>();
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "select cardnumber, cardtype, balance, username from bank_user_card";
+			String sql = "select cardnumber, cardtype, balance, username from bank_user_card where username = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, userAccount.getUsername());
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				UserCard card = new UserCard();
